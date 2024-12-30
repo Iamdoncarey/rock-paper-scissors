@@ -23,10 +23,20 @@ function playGame(playerChoice){
                 result = (computerChoice === "Paper") ? "YOU WIN" : "YOU LOSE";
                 break;
         }
-        console.log(playerChoice);
     }
         
     playerDisplay.textContent = `PLAYER: ${playerChoice}`;
-    computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
+    computerDisplay.textContent = `Computer: ${computerChoice}`;
     resultDisplay.textContent = result;
+
+    resultDisplay.classList.remove("greenText", "redText");
+
+    switch(result){
+        case "YOU WIN":
+            resultDisplay.classList.add("greenText");
+            break;
+        case "YOU LOSE":
+            resultDisplay.classList.add("redText");
+            break;
+    }
 }
